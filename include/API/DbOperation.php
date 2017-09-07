@@ -372,6 +372,8 @@ class DbOperation
 		$stmt->close();
 		return $billing_branch;
     }
+	
+	
 
 
     //Method to check the customer exist or not (Login Auth)
@@ -426,14 +428,15 @@ class DbOperation
         $id = $stmt->get_result()->fetch_all(1);
         $num_rows = $stmt->num_rows;
         $stmt->close();
-        if( $id)
+		return $id;
+        /* if( $id)
         {
-            return ($id);
+            return $id;
         }
         else
         {
             return 0;
-        }
+        } */
 	}
 
     

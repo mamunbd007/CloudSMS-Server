@@ -61,6 +61,23 @@ $app->get('/billing_branch_rate/:type', function ($type) use ($app) {
     echoResponse(200,$response);
 });
 
+/* *
+ * URL: http://www.colorboxbd.com/sms/modules/customers/getbranchrateid
+ * Parameters: type
+ * Method: get
+ * */
+  $app->get('/getbranchrateid/:type', function($type) use ($app){
+	  
+	  
+	  $db = new DbOperation();
+	  $return_branch_rate = $db->getBranchIds($type); 
+	 
+	  $response['error'] = true;
+	  $response['type'] = $return_branch_rate;
+	  echoResponse(200,$return_branch_rate);
+	  
+  });
+
 
 
 
